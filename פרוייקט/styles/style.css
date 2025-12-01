@@ -38,7 +38,7 @@ header h1 {
   margin-bottom: 10px;
 }
 
-nav ul {
+.header__wrap nav ul {
   list-style: none;
   display: flex;
   flex-direction: row-reverse;
@@ -46,7 +46,7 @@ nav ul {
 
 }
 
-nav a {
+.header__wrap nav a {
   color: #000000;
   text-decoration: none;
   font-size:20px;
@@ -72,6 +72,14 @@ footer {
   text-align: center;
   padding: 20px 0;
 }
+
+.footer__menu ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
 
 img {
   max-width: 100%;
