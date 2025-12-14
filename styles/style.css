@@ -8,7 +8,9 @@
 body {
   line-height: 1.6;
   font-family: "Raleway", sans-serif;
-
+  background-image: url(/images/andrej-lisakov-1Bg9Wlq3wXk-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .container {
@@ -18,10 +20,13 @@ padding: 0 30px;
   
 }
 
-
+img {
+  max-width: 100%;
+  height: auto;
+}
 /* Header */
 header {
-  background: #F5F2E9;
+  background: #8c7e73;
   color: #ffffff;
   padding: 20px 0;
 }
@@ -34,6 +39,17 @@ header {
 
 .logo{
     width: 250px;
+}
+.headerbar input{
+  width: 500px;
+  height: 45px;
+  display: flex;
+  border-radius: 20px;
+  font-weight: bold;
+  
+}
+.headerbar ::placeholder{
+  padding-left: 10px;
 }
 
 header h1 {
@@ -49,7 +65,7 @@ header h1 {
 }
 
 .header__wrap nav a {
-  color: #b29898;
+  color: #fff2f2;
   text-decoration: none;
   font-size:20px;
 }
@@ -90,10 +106,12 @@ footer {
   list-style: none;  
   gap: 30px;
 }
+
 footer a {
   color: inherit;         
   text-decoration: none;  
 }
+
 .footer__logo{
   width: 20%;
   display: flex;
@@ -111,25 +129,84 @@ footer a {
   display: flex;
   gap: 10px;
 }
+
 footer .item {
   display: flex;
   gap: 10px;
   justify-content: flex-start;
-
-    
 }
 
 .footer_down{
   margin-top: 10px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
 .social img{
   width: 30px;
 }
-.item span{
+footer .item span{
   margin-right: 10px;
+}
+
+/* cards */
+.cards__wrap {
+  display: flex;
+  gap: 8%;
+  flex-wrap: wrap;
+}
+
+
+.cards__menu {
+  width: 28%;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+}
+
+.cards img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:  0.3s ease; 
+}
+
+.cards__desc{
+  position: absolute;
+  inset: 0;
+  padding: 10px;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.cards__menu:hover img {
+  opacity: 0.4;
+}
+
+.cards__menu:hover .cards__desc {
+  opacity: 1;
+}
+
+.cards__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards__bottom{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1%;
+}
+.cards__mid h2{
+padding-bottom: 10%;
+text-decoration: underline;
+}
+
+.cards__mid{
+  text-align: center;
+  font-weight: 500;
 }
