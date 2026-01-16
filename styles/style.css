@@ -156,6 +156,26 @@ footer .item span{
 }
 
 
+.cards__title_wrap {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cards__title {
+  font-weight: bold;
+  font-size: 50px;
+  text-decoration: underline;
+  color: #8c7e73; 
+  text-transform: uppercase;
+}
+
+.cards__wrap {
+  display: flex;
+  gap: 8%;
+  flex-wrap: wrap;
+  margin-top: 30px; 
+}
+
 .cards__item {
   width: 28%;
   position: relative;
@@ -330,6 +350,7 @@ color: rgb(85, 18, 193);}
 .features__top p{
   font-size: 20px;
 }
+
 
 
 
