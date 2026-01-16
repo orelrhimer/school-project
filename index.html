@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
@@ -15,7 +16,7 @@
         <div class="header__wrap">
           <div class="logo"><img src="images/logorembg.png" alt=""></div>
           <div class="headerbar">
-            <input type="search" name="searchTools" placeholder="span Tool"  maxlength="30" >
+            <input type="search" name="searchTools" placeholder="search Tool"  maxlength="30" >
 
           </div>
           <nav>
@@ -30,14 +31,6 @@
     </header>
 
   <main>
-      <section class="section" id="section1">
-        <div class="container">
-          <h2>Section 1</h2>
-          <p>This is an example text for the first section.</p>
-          <img src="images/1.jpg" alt="Example image" />
-        </div>
-      </section>
-
     <section class="cards" id="section2">
         <div class="container">
           <div class="cards__wrap">
@@ -45,7 +38,7 @@
               <div class="cards__img"> <img src="images/carvingknife.png" alt=""></div>
               <div class="cards__desc">
                 <div class="cards__top">
-                  <span> <b>skill level: </b> Skilled 🟠</span>
+                  <span> <b>skill level: </b> Pro 🟣</span>
                   <span><b>wood working/wood carving</b></span>
                 </div>
                 <div class="cards__mid">
@@ -57,12 +50,14 @@
                 </div>
                 <div class="cards__bottom">
                   <span>estimated cost: 20$-240$</span>
-                  <button class="cards__btn"><img src="images/like-removebg-preview.png" alt=""></button>
-                </div>                  
+                  <button class="cards__btn">
+                    <img src="images/like-removebg-preview.png" alt="Like">
+                    <span class="like__count">0</span> </button>
+                </div>                 
               </div>
             </div>
             <div class="cards__item">
-              <div class="cards__img"> <img src="images/pexels-photo-209235.jpeg" alt=""></div>
+              <div class="cards__img"> <img src="images/the hummer.png" alt=""></div>
               <div class="cards__desc">
                 <div class="cards__top">
                   <span> <b>skill level: </b> newbie 🟢</span>
@@ -76,36 +71,87 @@
                   </div>
                 </div>
                 <div class="cards__bottom">
-                  <span>estimated cost: 5$-50$</span>
-                  <button class="cards__btn"><img src="images/like-removebg-preview.png" alt=""></button>
+                  <span>estimated cost: 20$-240$</span>
+                  <button class="cards__btn">
+                    <img src="images/like-removebg-preview.png" alt="Like">
+                    <span class="like__count">0</span> </button>
                 </div>                  
               </div>
             </div>
             <div class="cards__item">
-              <div class="cards__img"> <img src="images/carvingknife.png" alt=""></div>
+              <div class="cards__img"> <img src="images/drill.png" alt=""></div>
               <div class="cards__desc">
                 <div class="cards__top">
                   <span> <b>skill level: </b> Skilled 🟠</span>
-                  <span><b>wood working/wood carving</b></span>
+                  <span><b>all purposes/home common</b></span>
                 </div>
                 <div class="cards__mid">
-                  <h2>Wood Carving Knife</h2>
-                  <span>A wood carving knife is a sharp, precise tool used for shaping and detailing wood. It has a comfortable handle and a fine blade, making it great for small cuts, curves, and clean finishes in carving projects. It's ideal for both beginners and skilled woodworkers.</span>
+                  <h2>The Drill</h2>
+                  <span>A drill is a tool that spins a bit to make holes and drive screws in wood metal and other materials it can be corded or battery powered and is used for building fixing and making things.</span>
                   <div class="cards__links">
-                    <a href="https://www.morakniv.com/en-se/products/advanved-wood-carving-kit">the recomended item store</a>
+                    <a href="https://www.milwaukeetool.com/products/power-tools/drilling">the recomended item store</a>
                   </div>
                 </div>
                 <div class="cards__bottom">
                   <span>estimated cost: 20$-240$</span>
-                  <button class="cards__btn"><img src="images/like-removebg-preview.png" alt=""></button>
+                  <button class="cards__btn">
+                    <img src="images/like-removebg-preview.png" alt="Like">
+                    <span class="like__count">0</span> </button>
                 </div>                  
               </div>
             </div>
           </div>
         </div>
+      
+    </section>
+    <section class="features">
+      <div class="container">
+        <div class="features__top">
+          <h2 class="features__title">OUR SERVICES</h2>
+          <p>Discover the essential tools, safety guides, and expert resources we provide to help you master every project with confidence.</p>
+        </div>
+        <div class="features__wrap">
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/search.gif" alt=""></div>
+            <h3>TOOL ENCYCLOPEDIA</h3>
+            <p>Access a massive database of hand and power tools.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/career.gif" alt=""></div>
+            <h3>SKILL PATHWAYS</h3>
+            <p>Find tools and projects matched to your skill level.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/checking.gif" alt=""></div>
+            <h3>BUDGET TRACKER</h3>
+            <p>Get estimated costs and find the best value items.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/labor-safety.gif" alt=""></div>
+            <h3>CARE & SAFETY</h3>
+            <p>Keep your workshop and your fingers completely safe.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/good-review.gif" alt=""></div>
+            <h3>EXPERT REVIEWS</h3>
+            <p>See what other craftsmen are saying about tools.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+          <div class="feature__card">
+            <div class="feature__icon"><img src="images/project.gif" alt=""></div>
+            <h3>BLUEPRINT HELPER</h3>
+            <p>Get a customized shopping list for your next build.</p>
+            <a href="#" class="feature_link">Read More</a>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
-
+    
    <footer>
       <div class="container">
         <div class="footer__wrap">
@@ -139,5 +185,6 @@
         </div>
       </div>
     </footer>
+    <script src="skript.js"></script>
   </body>
 </html>
