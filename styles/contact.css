@@ -1,0 +1,114 @@
+/* Container override for page center */
+.contact {
+    padding: 80px 0;
+}
+
+.contact__wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Left Content */
+.contact__content {
+    flex: 1;
+}
+
+.contact__main_title {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 25px;
+    text-transform: lowercase;
+    color: #000;
+}
+
+.contact__subtext {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #333;
+    max-width: 450px;
+}
+
+.contact__method {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.contact__method img {
+    width: 25px;
+}
+
+.contact__socials {
+    margin-top: 40px;
+}
+
+.social_icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social_icons img {
+    width: 30px;
+}
+
+/* Form Styles */
+.contact__form_box {
+    flex: 1.2;
+}
+
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form__grid {
+    display: flex;
+    gap: 20px;
+}
+
+#contactForm input, 
+#contactForm textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+#contactForm input:focus {
+    outline: 2px solid #8c7e73;
+}
+
+.submit__btn {
+    background-color: #000;
+    color: #fff;
+    padding: 18px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+.submit__btn:hover {
+    background-color: #8c7e73;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 900px) {
+    .contact__wrap {
+        flex-direction: column;
+    }
+    .form__grid {
+        flex-direction: column;
+    }
+}
