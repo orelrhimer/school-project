@@ -1,59 +1,78 @@
+// --- לוגיקת כפתורי הלייק ---
+const likeButtons = document.querySelectorAll('.cards__btn');
 
-  const likeButtons = document.querySelectorAll('.cards__btn');
-
-  likeButtons.forEach(button => {
+likeButtons.forEach(button => {
     button.addEventListener('click', function() {
+        const countSpan = this.querySelector('.like__count');
+        let currentCount = parseInt(countSpan.textContent);
+        countSpan.textContent = currentCount + 1;
 
-      const countSpan = this.querySelector('.like__count');
-      
-
-      let currentCount = parseInt(countSpan.textContent);
-      countSpan.textContent = currentCount + 1;
-
-      this.style.transform = "scale(1.2)";
-      setTimeout(() => { this.style.transform = "scale(1)"; }, 100);
+        // אפקט ויזואלי קטן בלחיצה
+        this.style.transform = "scale(1.2)";
+        setTimeout(() => { this.style.transform = "scale(1)"; }, 100);
     });
-  });
-document.getElementById('contactForm')?.addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop page reload
+});
 
-    // Values
-    const name = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+// --- לוגיקת טופס צור קשר ---
+document.getElementById('contactForm')?.addEventListener('submit', async function(event) {
+    event.preventDefault(); // מניעת רענון הדף
 
-    // Validation checks
-    if (name.length < 3) {
+    // איסוף נתונים
+    const formData = {
+        fullName: document.getElementById('fullName').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+    };
+
+    // בדיקות תקינות (Validation)
+    if (formData.fullName.length < 3) {
         alert("Full Name must be at least 3 characters.");
         return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
+    if (!emailRegex.test(formData.email)) {
         alert("Please enter a valid email address.");
         return;
     }
 
-    // Phone validation (numbers only, min 10)
-    if (phone.length < 10 || isNaN(phone)) {
+    if (formData.phone.length < 10 || isNaN(formData.phone)) {
         alert("Phone must be at least 10 digits.");
         return;
     }
 
-    if (subject.length < 5) {
+    if (formData.subject.length < 5) {
         alert("Subject must be at least 5 characters.");
         return;
     }
 
-    if (message.length < 10) {
+    if (formData.message.length < 10) {
         alert("Message must be at least 10 characters.");
         return;
     }
 
-    // Success!
-    alert("Thank you! Your message has been sent successfully.");
-    this.reset(); // Clear the form
+    // --- שליחת הנתונים לשרת (Fetch) ---
+    try {
+        const response = await fetch('http://localhost:3000/api/contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            alert("Success! " + result.message);
+            this.reset(); // ניקוי הטופס רק אחרי הצלחה
+        } else {
+            alert("Something went wrong on the server.");
+        }
+    } catch (error) {
+        console.error("Fetch Error:", error);
+        alert("Error: Could not connect to the server. Make sure your Node.js server is running!");
+    }
 });
